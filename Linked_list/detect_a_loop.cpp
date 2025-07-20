@@ -35,3 +35,18 @@ public:
        return false;
     }
 };
+
+// brute solution
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        ListNode* temp = head;
+        unordered_map<ListNode*, int> Nodemap;
+        while(temp != NULL){
+            if(Nodemap[temp]) return true;
+            Nodemap[temp] = true;
+            temp = temp->next;
+        }
+        return false;
+    }
+};
